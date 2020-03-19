@@ -21,9 +21,9 @@ public class Main {
             doc.addTag("type", "Slides");
             catalog.add(doc);
 
-            doc = new Document("java2", "Java Course 1",
+            Document doc2 = new Document("java2", "Java Course 1",
                     "d:/catalog.ser");
-            catalog.add(doc);
+            catalog.add(doc2);
             try {
                 CatalogUtil.save(catalog);
             } catch (IOException e) {
@@ -39,9 +39,8 @@ public class Main {
             } catch (InvalidCatalogException e) {
                 e.printStackTrace();
             }
-            Document doc = catalog.findById("java2");
+            Document doc = catalog.findById("java1");
             CatalogUtil.view(doc);
-            Document doc2 = catalog.findById("java1");
-            CatalogUtil.view(doc);
+
         }
     }

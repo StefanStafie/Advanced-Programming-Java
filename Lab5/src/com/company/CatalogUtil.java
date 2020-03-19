@@ -33,7 +33,7 @@ public class CatalogUtil {
         Desktop desktop = Desktop.getDesktop();
         try {
             desktop.browse(new URI(doc.getLocation()));
-            desktop.edit(new File(doc.getLocation()));
+            //desktop.edit(new File(doc.getLocation()));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (URISyntaxException e) {
