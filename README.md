@@ -34,3 +34,17 @@ Capacity 15, itemCount 1000:
  	avg value	488.1674715302053  465.9094789124492
     avg time	0.3442  0.3938
 
+
+
+# Lab4
+
+The Compulsory part can be viewed by uncommenting "//Compulsory compulsory = new Compulsory();" in Main
+
+Problems are generated using ProblemGenerator. The number of hospitals and residents to be generated are given as parameters. The names are generated using Faker class (https://github.com/faker-ruby/faker)
+
+A possible Matching is created using Algorithm on a Problem
+
+For checking the corectness of Matching, use CheckStable;
+
+
+# Lab5
