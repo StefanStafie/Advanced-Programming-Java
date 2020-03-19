@@ -2,7 +2,14 @@
 
 # Lab 3
 
-**teste realizate pe 10000 de iteratii**
+The classes Book, Food and Weapon should implement the interface Item.
+   When printing a Knapsack with Knapsack.print, items are ordered according to name.
+   Greedy and Dynamic are 2 classes that implement the Algorithm interface with the **solve** method.
+   ProblemGenerator class creates Item[] objects randomly with a chosen number of items.
+   The results of tests are as follow:
+
+
+**10000 iterations on each test**
 
 pairs: dynamic--greedy
 

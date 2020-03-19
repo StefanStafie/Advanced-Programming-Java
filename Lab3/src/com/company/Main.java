@@ -10,7 +10,8 @@ public class Main {
         Knapsack pack2 = new Knapsack(  CAPACITY); // Knapsack for greedy
 
         ProblemGenerator g = new ProblemGenerator();
-        Algorithm x = new Algorithm();
+        Greedy greedyAlg = new Greedy();
+        Dynamic dynamicAlg = new Dynamic();
         double dyn, gred;
         double dynamicAvg= 0, greedyAvg = 0, dynamicTime = 0, greedyTime = 0; // for calculating performance
 
@@ -18,9 +19,9 @@ public class Main {
             pack1.delete();
             pack2.delete();
             long startTime = System.currentTimeMillis(); //check clock
-            dyn = x.dynamic(pack1, g.generate(ITEMNUMBER));//dynamic algorithm
+            dyn = dynamicAlg.solve(pack1, g.generate(ITEMNUMBER));//dynamic algorithm
             long time1 = System.currentTimeMillis();//check clock
-            gred = x.greedy(pack2, g.lastGeneration());//greedy algorithm
+            gred = greedyAlg.solve(pack2, g.lastGeneration());//greedy algorithm
             long time2 = System.currentTimeMillis();//check clock
             /*time for calculating avg time*/
             dynamicTime += time1-startTime;
