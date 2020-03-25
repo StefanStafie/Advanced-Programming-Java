@@ -1,0 +1,1 @@
+{"name":"Java Resources","path":"catalog.txt","Documente":[{"id":"java1","name":"Java Course 1","location":"https://profs.info.uaic.ro/~acf/java/slides/en/intro_slide_en.pdf","type":"Slides"},{"id":"java2","name":"Java Course 1","location":"catalog.txt"}]}
