@@ -12,7 +12,7 @@ public class ViewCommand implements Command{
     }
 
     @Override
-    public void executeSelf() {
+    public void run() {
         Desktop desktop = Desktop.getDesktop();
         try {
             desktop.browse(URI.create(id));

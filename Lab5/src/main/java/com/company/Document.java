@@ -41,6 +41,17 @@ public class Document implements Serializable {
         this.location = location;
     }
 
+    public Document(String id, String name, String location, Map<String, Object> tags) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.tags = tags;
+    }
+
+    public void setTags(Map<String, Object> tags) {
+        this.tags = tags;
+    }
+
     public String getLocation() {
         return location;
     }

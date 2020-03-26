@@ -1,1 +1,0 @@
-{"name":"catalog2","path":"catalog2.txt","Documente":[{"id":"j1","name":"stagii","location":"stagii.txt","oras":"iasi","plata":"2500"},{"id":"j2","name":"statiuni","location":"statiuni.txt","nrCamere":"200"},{"id":"j3","name":"supervizoro","location":"supervizori.txt"}]}

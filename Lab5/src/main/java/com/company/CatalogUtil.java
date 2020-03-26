@@ -3,13 +3,14 @@ package com.company;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import java.awt.*;
-import java.io.*;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -17,72 +18,33 @@ import java.util.Map;
 public class CatalogUtil {
     public static void save(Catalog catalog)
             throws IOException {
-        PrintStream fileStream = new PrintStream(catalog.getPath());
-        System.setOut(fileStream);
+        PrintStream file = new PrintStream( catalog.getPath( ));
+        System.setOut( file);
 
-        JsonObject catalogJson = new JsonObject();
-        catalogJson.addProperty("name", catalog.getName());
-        catalogJson.addProperty("path", catalog.getPath());
+        JsonObject jsonCatalog = new JsonObject();
+        jsonCatalog.addProperty("name", catalog.getName ());
+        jsonCatalog.addProperty( "path", catalog.getPath( ));
 
-        JsonArray documenteJson = new JsonArray();
-        List<Document> documente = catalog.getDocuments();
-        for(var doc:documente) {
-            JsonObject documentJson = new JsonObject();
-            documentJson.addProperty("id", doc.getId());
-            documentJson.addProperty("name", doc.getName());
-            documentJson.addProperty("location", doc.getLocation());
+        JsonArray jsonDocs = new JsonArray();
+        List<Document> documents = catalog.getDocuments();
+        for(Document doc:documents) {
+            JsonObject jsonDoc = new JsonObject();
+            jsonDoc.addProperty("id", doc.getId());
+            jsonDoc.addProperty("location", doc.getLocation());
+            jsonDoc.addProperty("name", doc.getName());
             Map<String, Object> tags = doc.getTags();
-            for(var tag: tags.entrySet()) {
-                documentJson.addProperty(tag.getKey().toString(), tag.getValue().toString());
-            }
-            documenteJson.add(documentJson);
+            tags.forEach((key, value) -> jsonDoc.addProperty(key.toString(), value.toString()));
+            jsonDocs.add(jsonDoc);
         }
-        catalogJson.add("Documente", documenteJson);
-        System.out.println(catalogJson);
-        System.setOut(new PrintStream(new FileOutputStream(FileDescriptor.out)));
+        jsonCatalog.add( "Documents", jsonDocs);
+        System.out.println(jsonCatalog);
+        System.setOut(new PrintStream (
+                        new FileOutputStream(
+                            FileDescriptor.out)));
     }
 
 
-    public static Catalog load(String path)
-            throws InvalidCatalogException {
-        var records = new String();
-        try ( BufferedReader reader = new BufferedReader(new FileReader(path))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                records += line;
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
-            return null;
-        } catch (IOException e) {
-            System.out.println(e);
-            return null;
-        }
-        String jsonString = records;
-        JsonParser jsonParser = new JsonParser();
-        JsonObject objectFromString = jsonParser.parse(jsonString).getAsJsonObject();
-        //catalog
-        Catalog catalog = new Catalog();
-        catalog.setName(objectFromString.get("name").getAsString());
-        catalog.setPath(objectFromString.get("path").getAsString());
-        JsonArray jsonArray = objectFromString.get("Documente").getAsJsonArray();
-        //documente
-        List<Document> documente = new ArrayList<>();
-        for(var x : jsonArray){
-            Document doc = new Document();
-            JsonObject jsonDoc = x.getAsJsonObject();
-            doc.setId(jsonDoc.get("id").getAsString());
-            doc.setName(jsonDoc.get("name").getAsString());
-            doc.setLocation(jsonDoc.get("location").getAsString());
 
-            var tags = doc.getTags().entrySet();
-            for(var tag:tags){
-                doc.addTag(tag.getKey(), tag.getValue());
-            }
-            catalog.add(doc);
-        }
-        return catalog;
-    }
     public static void view(Document doc) {
         Desktop desktop = Desktop.getDesktop();
         try {

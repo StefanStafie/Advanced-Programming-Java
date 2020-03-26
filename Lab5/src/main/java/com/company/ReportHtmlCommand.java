@@ -5,23 +5,40 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
-public class HtmlCommand implements Command{
+public class ReportHtmlCommand implements Command{
     Catalog catalog;
-    String savePath;
-    public HtmlCommand(Catalog catalog, String savePath) {
+    String location;
+    public ReportHtmlCommand(Catalog catalog, String location) {
         this.catalog = catalog;
-        this.savePath = savePath;
+        this.location = location;
+    }
+
+    public Catalog getCatalog() {
+        return catalog;
+    }
+
+    public void setCatalog(Catalog catalog) {
+        this.catalog = catalog;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
-    public void executeSelf() {
-        PrintStream fileStream = null;
+    public void run() {
+        PrintStream file = null;
         try {
-            fileStream = new PrintStream(savePath);
+
+            file = new PrintStream(location);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("cannot access file location" + location);;
         }
-        System.setOut(fileStream);
+        System.setOut(file);
 
 
         System.out.println("<html>\n<head></head>\n<body>\n");

@@ -1,19 +1,36 @@
 package com.company;
 
 public class ListCommand implements Command{
-    Catalog catalog = new Catalog();
     String id;
+    Catalog catalog ;
+
     public ListCommand(Catalog catalog, String id) {
         this.catalog = catalog;
         this.id = id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setCatalog(Catalog catalog) {
+        this.catalog = catalog;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Catalog getCatalog() {
+        return catalog;
+    }
+
     @Override
-    public void executeSelf() {
+    public void run() {
         Document doc = catalog.findById(id);
-        if(doc!= null)
-            System.out.println(doc.toString());
+        if(doc== null)
+            System.out.println("\"" + id + "\" nu exista");
         else
-            System.out.println("Nu a gasit \"" + id + "\"");
+            System.out.println(doc.toString());
     }
 }

@@ -7,68 +7,66 @@ import java.io.InputStreamReader;
 
 public class Main {
         static Catalog  catalog = null;
-        public static void main(String[] args) throws
-        java.io.IOException {
-
-            String commandLine;
-            BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
+        public static void main(String[] args){
+            String linie;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
             while (true) {
-                //read the command
-                System.out.print("shell>");
-                commandLine = console.readLine();
-
-                //if just a return, loop
-                if (commandLine.equals("")){
+                System.out.print("enter command>");
+                try {
+                    linie = reader.readLine();
+                } catch (IOException e) {
+                    System.out.println("exceptie IO");
+                    return;
+                }
+                //pentru enter
+                if (linie.equals("")){
                     continue;
                 }
-
-                //clear screen
-                if (commandLine.equals("clear")) {
-                    for (int cls = 0; cls < 100; cls++ ){
-                        System.out.println("");
-                    }
+                //pentru clear screen
+                if (linie.equals("clear")) {
+                    System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n");
                     continue;
                 }
-                if (commandLine.equals("exit")) {
-                    System.out.println("Exiting");
+                //pentru exit
+                if (linie.equals("exit")) {
+                    System.out.println("Now exiting");
                     System.exit(0);
 
                 }
 
-                //help command
-                if (commandLine.equals("help")) {
+                //pentru help
+                if (linie.equals("help")) {
                     System.out.println();
                     System.out.println();
-                    System.out.println("Written by: Stafie Stefan");
+                    System.out.println("Written by: Stafie Stefan");;
                     System.out.println("Lab5 Java");
                     System.out.println("Commands to use:");
                     System.out.println("--------------------");
-                    System.out.println("create catalog {name} {path}");
-                    System.out.println("add doc {id} {name} {path}");
-                    System.out.println("add tag {name} {value} to {id}");
-                    System.out.println("load {path}");
-                    System.out.println("list {id}");
+                    System.out.println(" create catalog <name> <path>");
+                    System.out.println("add doc {id} <name> <path>");
+                    System.out.println("add tag <name> <value> to <id>");
+                    System.out.println("load <path>");
+                    System.out.println("list <id>");;
                     System.out.println("report html");
                     System.out.println("view");
                     System.out.println("clear");
                     System.out.println("save");
                     System.out.println("help");
-                    System.out.println("---------------------");
-                    System.out.println();
+                    System.out.println("---------------------");;
+                    continue;
                 }
 
-                //if it actually receives a command
-
-                if(commandLine.startsWith("add doc ")) {
+                //pentru adaugare a unui document intr-un catalog
+                if(linie.startsWith("add doc ")) {
                     if(catalog==null){
                         System.out.println("You have to load the catalog first");
                     } else {
-                        String[] argumente = commandLine.split(" ");
-                        if (argumente.length != 5) {
+                        String[] parametri = linie.split(" ");
+                        if (parametri.length != 5) {
                             System.out.println("Write \"help\" for help");
                         } else {
-                            Document document = new Document(argumente[2], argumente[3], argumente[4]);
+                            Document document = new Document(parametri[2], parametri[3], parametri[4]);
                             catalog.add(document);
                         }
 
@@ -76,42 +74,45 @@ public class Main {
                     continue;
                 }
 
-                if(commandLine.equals("save")) {
+                //pentru salvarea catalogului pe disc
+                if(linie.equals("save")) {
                     if(catalog==null){
                         System.out.println("You have to load the catalog first");
                     } else {
                         CatalogUtil use = new CatalogUtil();
                         try{use.save(catalog);}
-                        catch(IOException e){
-                            System.out.println("Cannot find file path");
+                        catch(Exception e){
+                            System.out.println("Cannot find file path or file already exists");
                         }
                     }
                     continue;
                 }
 
-                if(commandLine.startsWith("create catalog ")) {
-                    String[] argumente = commandLine.split(" ");
-                    if (argumente.length != 4) {
+                //pentru crearea unui catalog gol
+                if(linie.startsWith("create catalog ")) {
+                    String[] parametri = linie.split(" ");
+                    if (parametri.length != 4) {
                         System.out.println("Write \"help\" for help");
                     } else {
-                       catalog = new Catalog(argumente[2], argumente[3]);
+                       catalog = new Catalog(parametri[2], parametri[3]);
                     }
                     continue;
                 }
 
-                if(commandLine.startsWith("add tag ")) {
+                //pentru adaugarea unui tag la un document
+                if(linie.startsWith("add tag ")) {
                     if(catalog==null){
                         System.out.println("You have to load the catalog first");
                     } else {
-                        String[] argumente = commandLine.split(" ");
-                        if (argumente.length != 6) {
+                        String[] parametri = linie.split(" ");
+                        if (parametri.length != 6) {
                             System.out.println("Write \"help\" for help");
                         } else {
-                            Document document = catalog.findById(argumente[5]);
+                            Document document = catalog.findById(parametri[5]);
                             if(document == null) {
                                 System.out.println("Document not found");
                             } else {
-                                document.addTag(argumente[2],argumente[3]);
+                                document.addTag(parametri[2],parametri[3]);
                             }
 
                         }
@@ -119,60 +120,55 @@ public class Main {
                     continue;
                 }
 
-
-
-                if(commandLine.startsWith("load ")) {
-                    String[] argumente = commandLine.split(" ");
-                    if (argumente.length != 2){
-                        System.out.println("Write \"help\" for help");
+                //pentru incarcarea unui catalog de pe disc in memorie
+                if(linie.startsWith("load ")) {
+                    String[] parametri = linie.split(" ");
+                    if (parametri.length != 2){
+                        System.out.println("\"help\" for help");
                         continue;
                     }
-                    LoadCommand x = new LoadCommand(catalog, argumente[1]);
-                    x.executeSelf();
+                    LoadCommand x = new LoadCommand(catalog, parametri[1]);
+                    x.run();
                     catalog = x.getCatalog();
                     continue;
                 }
 
-                if (commandLine.equals("view")) {
+                //pentru deschis catalog in notepad
+                if (linie.equals("view")) {
                     if(catalog != null && catalog.getPath() !=null){
-                        new ViewCommand(catalog.getPath()).executeSelf();
+                        new ViewCommand(catalog.getPath()).run();
                     } else {
-                        System.out.println("You have to load catalog first");
-                    }
-                    continue;
-                }
-                if (commandLine.startsWith("add ")) {
-                    if(catalog != null){
-                        new HtmlCommand(catalog,"index.html").executeSelf();
-                    } else {
-                        System.out.println("You have to load catalog first");
-                    }
-                    continue;
-                }
-                if (commandLine.equals("report html")) {
-                    if(catalog != null){
-                        new HtmlCommand(catalog,"index.html").executeSelf();
-                    } else {
-                        System.out.println("You have to load catalog first");
+                        System.out.println("load catalog pls");
                     }
                     continue;
                 }
 
-                if (commandLine.startsWith("list")) {
-                    if (catalog == null) {
-                        System.out.println("you have to load catalog first");
+                //pentru salvare in format html (salveaza ca index.html)
+                if (linie.equals("report html")) {
+                    if(catalog != null){
+                        new ReportHtmlCommand(catalog,"index.html").run();
                     } else {
-                        String[] argumente = commandLine.split(" ");
+                        System.out.println("load catalog pls");
+                    }
+                    continue;
+                }
+
+                //pentru afisarea unui document in cosola
+                if (linie.startsWith("list")) {
+                    if (catalog == null) {
+                        System.out.println("load catalog pls");
+                    } else {
+                        String[] argumente = linie.split(" ");
                         if (argumente.length != 2) {
-                            System.out.println("Write \"help\" for help");
+                            System.out.println("\"help\" for help");
                         } else {
-                            new ListCommand(catalog, argumente[1]).executeSelf();
+                            new ListCommand(catalog, argumente[1]).run();
                         }
                     }
                     continue;
                 }
-                //in case everything fails, goes to help
-                System.out.println("Write \"help\" for help");
+                //daca nu e recunoscuta nicio comanda, propune help
+                System.out.println("\"help\" for help");
             }
         }
     }
