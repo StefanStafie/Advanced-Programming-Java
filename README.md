@@ -52,4 +52,11 @@ For checking the corectness of Matching, use CheckStable;
 Uploaded--
 Implemented save, load and view; 
 
-All work properly
+Optional:
+    
+    -Save and load using txt files. (in JSON format)
+    -Classes for each Command (ListCommand, LoadCommand, ViewCommand, ReportHtmlCommand) that implement the interface Command
+    -created shell (input "help" for command list)
+    -ability to create catalog, add documents and tags to documents
+    -report html creates index.html in current directory
+    -created executable JAR
