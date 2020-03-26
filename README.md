@@ -60,3 +60,10 @@ Optional:
     -ability to create catalog, add documents and tags to documents
     -report html creates index.html in current directory
     -created executable JAR
+
+# Lab6
+
+Just compulsory.
+
+    app.bmp  -> app layout
+    text.png -> save option file
