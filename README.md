@@ -69,3 +69,12 @@ Optional:
     Support for saving and loading the image to disk using a file chooser.
     Support for reset and exit.
 To refresh canvas and configPanel, click on canvas after every change.
+
+# Lab7
+
+    The game plays itself in initialisation ( new Game(playerCount, tokenCount, progressionSize); )
+    A thread is created for each Player.
+    Each player takes progressionSize tokens from the Board (using getToken()). Then, he exchanges tokens (1 player token with 1 board token, using exchangeToken() ) until the player has a progression.
+    Both getToken() and exchangeToken() are synchronised methods so that the players don't clash when they take tokens. After a token is taken from the board, it is removed from the list of tokens available in the board.
+    A player may only keep progressionSize Tokens in hand.
+    When a player obtains a progression, the main thread stops all other player threads (killing it softly) and prints the winner.
