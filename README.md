@@ -63,7 +63,9 @@ Optional:
 
 # Lab6
 
-Just compulsory.
-
-    app.bmp  -> app layout
-    text.png -> save option file
+    Support for 3 Shapes (Rectangle, Circle, RegularPolygon).
+    The configuration panel adapts to the current Shape.
+    Support for 3 colors (Red, Green, Blue).
+    Support for saving and loading the image to disk using a file chooser.
+    Support for reset and exit.
+To refresh canvas and configPanel, click on canvas after every change.

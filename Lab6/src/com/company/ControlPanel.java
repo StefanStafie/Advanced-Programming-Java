@@ -14,6 +14,7 @@ public class ControlPanel extends JPanel {
     JButton loadBtn = new JButton("Load");
     JButton resetBtn = new JButton("Reset");
     JButton exitBtn = new JButton("Exit");
+    final JFileChooser fc = new JFileChooser();
 
     public ControlPanel(MainFrame frame) {
         this.frame = frame; init();
@@ -36,15 +37,32 @@ public class ControlPanel extends JPanel {
     }
     private void save(ActionEvent e) {
         try {
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Specify a file to save");
 
-            ImageIO.write(frame.canvas.image, "PNG", new File("test.png"));
+            int userSelection = fileChooser.showSaveDialog(saveBtn);
+
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+                System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+                ImageIO.write(frame.canvas.image, "PNG", new File(fileToSave.getAbsolutePath()));
+            }
         } catch (IOException ex) { System.err.println(ex); }
     }
 
     private void load(ActionEvent e) {
         try {
-            BufferedImage image = ImageIO.read(new File("test.png"));
-            frame.canvas.graphics.drawImage(image,null, 0,0);
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Specify a file to save");
+
+            int userSelection = fileChooser.showSaveDialog(saveBtn);
+
+            if (userSelection == JFileChooser.APPROVE_OPTION) {
+                File fileToSave = fileChooser.getSelectedFile();
+                System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+                BufferedImage image = ImageIO.read(new File(fileToSave.getAbsolutePath()));
+                frame.canvas.graphics.drawImage(image,null, 0,0);
+            }
         } catch (IOException ex) { System.err.println(ex); }
     }
     private void reset(ActionEvent e) {

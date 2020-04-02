@@ -26,9 +26,7 @@ public class MainFrame extends JFrame {
         add(canvas, CENTER); //this is BorderLayout.CENTER
         add(configPanel, BorderLayout.NORTH);
         add(controlPanel, SOUTH);
- //TODO
 
-        //invoke the layout manager
         pack();
     }
 }
