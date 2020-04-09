@@ -3,8 +3,8 @@ package ro.uaic.info.myapp.app;
 import ro.uaic.info.myapp.dao.AlbumController;
 import ro.uaic.info.myapp.dao.ArtistController;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.util.List;
 
 public class Test {
     public Test() {
@@ -12,31 +12,14 @@ public class Test {
         artistController.create("Robby", "Miraku");//add artists
         artistController.create("Morty", "Baruba");
         artistController.create("Rafaelo", "Venezuela");
-        ResultSet artistResult = artistController.findByName("Morty");//artists with this name
-        int idHelper = 0;
-        try {
-            /**for each artist with that name, get the country*/
-            while(artistResult.next()) {
-                System.out.println("Artistul Morty s-a nascut in :" + artistResult.getString("country"));
-                idHelper = artistResult.getInt("id");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
+        List id = artistController.findByName("Morty");//artists with this name
+        System.out.println(id);
 
         AlbumController albumController = new AlbumController();
-        albumController.create("Makeba", idHelper-1, 1999);//add albums
-        albumController.create("Back to school", idHelper, 2000);
-        albumController.create("Soundify", idHelper, 2089);
-        ResultSet albumResult = albumController.findByArtist(idHelper);//find albums with that artist_id
-        try {
-            /**for each album with that artist_id, get the name*/
-            System.out.printf("Artistul cu id = " + idHelper + " are albumele:");
-            while(albumResult.next())
-                System.out.printf("%s",albumResult.getString("name") + ", ");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        albumController.create("Makeba",(int) id.get(0), 1999);//add albums
+        albumController.create("Back to school", (int) id.get(0), 2000);
+        albumController.create("Soundify", (int) id.get(0), 2089);
+        List albumResult = albumController.findByArtist((int) id.get(0));//find albums with that artist_id
+        System.out.println(albumResult);
     }
 }

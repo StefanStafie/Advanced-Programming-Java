@@ -2,6 +2,8 @@ package ro.uaic.info.myapp.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AlbumController {
     public AlbumController() {
@@ -27,15 +29,22 @@ public class AlbumController {
     /** finds entry with given artistId
      *
      * @param artistId the artistId of the creator of the album
-     * @return ResultSet corresponding to the artistId (might return more rows)
+     * @return List corresponding to the artistId (might return more rows)
      */
-    public ResultSet findByArtist(int artistId){
+    public List findByArtist(int artistId){
         ResultSet rset = null;
         try {
             rset = Database.getInstance().getStmt().executeQuery("Select * from  albums where artist_id = '" + artistId + "'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return rset;
+        List albumNames = new ArrayList<>();
+        try{
+            while(rset.next())
+                albumNames.add(rset.getString("name"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return albumNames;
     }
 }

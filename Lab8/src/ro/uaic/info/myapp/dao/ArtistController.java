@@ -1,7 +1,10 @@
 package ro.uaic.info.myapp.dao;
 
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ArtistController {
     public ArtistController() {
@@ -27,15 +30,22 @@ public class ArtistController {
     /** finds entry with given name
      *
      * @param name the name of the entry to be found
-     * @return ResultSet corresponding to the name (might return more rows)
+     * @return the first id it finds corresponding to the name
      */
-    public ResultSet findByName(String name){
+    public List findByName(String name){
         ResultSet rset = null;
         try {
             rset = Database.getInstance().getStmt().executeQuery("Select * from artists where name = '" + name + "'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return rset;
+        List artistIds = new ArrayList<>();
+        try{
+            while(rset.next())
+                artistIds.add(rset.getInt("id"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return artistIds;
     }
 }
