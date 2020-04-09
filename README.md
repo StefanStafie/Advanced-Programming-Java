@@ -71,6 +71,7 @@ Optional:
 To refresh canvas and configPanel, click on canvas after every change.
 
 # Lab7
+No update for Lab7
 
     The game plays itself in initialisation ( new Game(playerCount, tokenCount, progressionSize); )
     A thread is created for each Player.
@@ -78,3 +79,16 @@ To refresh canvas and configPanel, click on canvas after every change.
     Both getToken() and exchangeToken() are synchronised methods so that the players don't clash when they take tokens. After a token is taken from the board, it is removed from the list of tokens available in the board.
     A player may only keep progressionSize Tokens in hand.
     When a player obtains a progression, the main thread stops all other player threads (killing it softly) and prints the winner.
+
+No update for Lab7 ^^^^^^
+
+# Lab8
+
+    The database is created using MySql and is hosted by localhost phpmyadmin. To use:
+    - choice 1: copy the musicalalbums folder to your C:\xampp\mysql\data
+    - choice 2: use musicalalbums.sql to create the database on your system.
+ 
+- The Test class inserts 3 rows in artist table and 3 rows in album table using create(). Then uses findByName() and findByArtist() to return a result set and and print on screen.
+- ArtistController, having the methods create(String name, String country) and findByName(String name):return ResultSet
+- AlbumController, having the methods create(String name, int artistId, int releaseYear) and findByArtist(int artistId):return ResultSet
+- Database class is a Singleton. Has Statement and Connection variables.
