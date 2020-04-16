@@ -14,10 +14,10 @@ public class AlbumController {
      * @param name the name of the artist to be inserted
      * @param artistId the artistId of the album artist
      * @param releaseYear the release year of the album
-     * returns affectedRows. Might be useful later
+     *
      */
     public void create(String name, int artistId, int releaseYear) {
-        int affectedRows = -1;
+        int affectedRows = -1;//might be useful later
         try {
             java.sql.Statement stmt = Database.getInstance().getStmt();
             affectedRows = stmt.executeUpdate("INSERT INTO albums (name, artist_id, release_year) values ('" + name + "', '" + artistId + "', '" + releaseYear + "')");
@@ -46,5 +46,21 @@ public class AlbumController {
             e.printStackTrace();
         }
         return albumNames;
+    }
+    public List findAllId(){
+        ResultSet rset = null;
+        try {
+            rset = Database.getInstance().getStmt().executeQuery("Select id from  albums");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        List ids = new ArrayList<>();
+        try{
+            while(rset.next())
+                ids.add(rset.getInt("id"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ids;
     }
 }
