@@ -92,3 +92,12 @@ No update for Lab7 ^^^^^^
 - ArtistController, having the methods create(String name, String country) and findByName(String name):return ResultSet
 - AlbumController, having the methods create(String name, int artistId, int releaseYear) and findByArtist(int artistId):return ResultSet
 - Database class is a Singleton. Has Statement and Connection variables.
+ 
+Optional Update:
+
+- Created tables 'charts' (id, title)and 'chart_record' (id, chart_id, album_id) for storing charts.
+- Created classes Artist, Album, Chart and ChartController.
+- Used a fake data generator.
+- Implemented a ranking based on number of points (might be interpreted as views). More points bring the artist higher in ranking.
+- Created a method for finding the ranking of artists based on all their albums that appear in all charts. 
+- Test class generates 20 artists, 100 albums and 10 charts with 10 albums each. Then displays the ranking of the artists based on their points.
