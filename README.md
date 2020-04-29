@@ -101,3 +101,15 @@ Optional Update:
 - Implemented a ranking based on number of points (might be interpreted as views). More points bring the artist higher in ranking.
 - Created a method for finding the ranking of artists based on all their albums that appear in all charts. 
 - Test class generates 20 artists, 100 albums and 10 charts with 10 albums each. Then displays the ranking of the artists based on their points.
+
+# Lab9
+
+null;
+
+# Lab10
+
+- Implement functionalities of the game
+- The clients send to the server commands such as: create game, join game, submit move, etc.
+- The server is responsible with the game management and mediating the players.
+- Once a game is finished a SGF representation of the game is uploaded to a Web server ( "http://students.info.uaic.ro/~stefan.stafie/" ) using JCraft
+- Created a GUI for the game
