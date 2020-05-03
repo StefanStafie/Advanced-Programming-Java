@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb0d4261-cd21-41ba-859b-f23f4452464a" name="Default Changelist" comment="" />
+    <list default="true" id="bb0d4261-cd21-41ba-859b-f23f4452464a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/artifacts/client_jar/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/artifacts/client_jar/client.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/GomokuClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/GomokuClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/META-INF/client.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/production/client/ServerCommunicator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/ServerCommunicator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/GomokuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/GomokuClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/ServerCommunicator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/ServerCommunicator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GomokuServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GomokuServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GomokuServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GomokuServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/server.kotlin_module" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +31,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -25,6 +42,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1b7NOtd8sMMdk4STo3TtEx0l6fL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -32,9 +50,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../client" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -164,6 +184,10 @@
       <workItem from="1588167347907" duration="3268000" />
       <workItem from="1588173583966" duration="201000" />
       <workItem from="1588173855336" duration="4574000" />
+      <workItem from="1588244961553" duration="2060000" />
+      <workItem from="1588339519153" duration="211000" />
+      <workItem from="1588439110390" duration="25000" />
+      <workItem from="1588508812069" duration="3435000" />
     </task>
     <servers />
   </component>
@@ -191,26 +215,26 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="360" y="75" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1536.834@0.0.1536.834" timestamp="1587982661665" />
-    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1588024256109">
+    <state x="549" y="159" key="FileChooserDialogImpl" timestamp="1588247843895">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1588024256109" />
-    <state width="746" height="247" key="GridCell.Tab.0.bottom" timestamp="1588178439224">
+    <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1588247843895" />
+    <state width="1329" height="344" key="GridCell.Tab.0.bottom" timestamp="1588512390502">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="746" height="247" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588178439224" />
-    <state width="746" height="247" key="GridCell.Tab.0.center" timestamp="1588178439224">
+    <state width="1329" height="344" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588512390502" />
+    <state width="1329" height="344" key="GridCell.Tab.0.center" timestamp="1588512390502">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="746" height="247" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588178439224" />
-    <state width="746" height="247" key="GridCell.Tab.0.left" timestamp="1588178439224">
+    <state width="1329" height="344" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588512390502" />
+    <state width="1329" height="344" key="GridCell.Tab.0.left" timestamp="1588512390502">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="746" height="247" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588178439224" />
-    <state width="746" height="247" key="GridCell.Tab.0.right" timestamp="1588178439224">
+    <state width="1329" height="344" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588512390502" />
+    <state width="1329" height="344" key="GridCell.Tab.0.right" timestamp="1588512390502">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="746" height="247" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588178439224" />
+    <state width="1329" height="344" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588512390502" />
     <state width="686" height="324" key="GridCell.Tab.1.bottom" timestamp="1588164828165">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -263,10 +287,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588173943258" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588173854834">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588508812057">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1588173854834" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1588508812057" />
     <state x="499" y="197" key="extract.method.dialog" timestamp="1587999011319">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -301,6 +325,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/Game.java</url>
           <line>38</line>
           <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GomokuServer.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

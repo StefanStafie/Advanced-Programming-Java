@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -30,6 +31,12 @@ public class ServerCommunicator {
     }
 
     public void sendCreate(int id) {
+        if(isConnected){
+            JFrame connected = new JFrame("Already connected");
+            connected.add(new JLabel("\n\n\nYou are already in a room\n\n\n"));
+            connected.setVisible(true);
+            return;
+        }
         createSocket();
         out.println("create " + id);
         out.flush();
@@ -51,6 +58,12 @@ public class ServerCommunicator {
     }
 
     public void sendJoin(int id) {
+        if(isConnected){
+            JFrame connected = new JFrame("Already connected");
+            connected.add(new JLabel("\n\n\nYou are already in a room\n\n\n"));
+            connected.setVisible(true);
+            return;
+        }
         createSocket();
         out.println("join " + id);
         out.flush();

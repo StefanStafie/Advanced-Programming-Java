@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,6 +42,15 @@ public class GomokuClient {
                 if (response.startsWith("Hello")) {
                     System.out.println(response);
                     serverCommunicator.sendName("Ready");
+                }
+                if (response.equals("Bad")) {
+                    JFrame bad = new JFrame();
+                    bad.add(new Label("Bad room id"));
+                    bad.setVisible(true);
+                    gameVisuals.serverCommunicator.isConnected = false;
+                    while(gameVisuals.serverCommunicator.isConnected == false){
+                        Thread.sleep(5);
+                    }
                 }
 
                 response = serverCommunicator.receive();
