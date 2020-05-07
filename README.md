@@ -108,8 +108,14 @@ null;
 
 # Lab10
 
-- Implement functionalities of the game
+- Implemented functionalities of the game
 - The clients send to the server commands such as: create game, join game, submit move, etc.
 - The server is responsible with the game management and mediating the players.
 - Once a game is finished a SGF representation of the game is uploaded to a Web server ( "http://students.info.uaic.ro/~stefan.stafie/" ) using JCraft
 - Created a GUI for the game
+- In server, a Thread is created for each room (game) and for each player (client), allowing multiple games to take place at once
+- Client built as executable JAR. 
+
+# Lab11
+
+-compulsory
