@@ -30,6 +30,10 @@ public class GameVisuals extends JPanel {
         }
 
         JPanel bottomPanel = new JPanel();
+        JButton history = new JButton("History");
+        history.addActionListener(new HistoryListener(this));
+
+
         JButton submit = new JButton("Submit move");
         submit.addActionListener(new SubmitListener(this));
 
@@ -42,10 +46,12 @@ public class GameVisuals extends JPanel {
         join.addActionListener(new JoinListener(this, spinner));
 
 
+        bottomPanel.add(history);
         bottomPanel.add(submit);
         bottomPanel.add(create);
         bottomPanel.add(join);
         bottomPanel.add(spinner);
+
 
 
         setLayout(new BorderLayout());

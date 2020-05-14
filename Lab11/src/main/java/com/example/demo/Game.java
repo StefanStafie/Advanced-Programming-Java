@@ -10,6 +10,12 @@ public class Game {
     Date date;
     String result;
 
+    public Game(int player1, int player2, String content, String result) {
+        this.player1 = player1;
+        this.player2 = player2;
+        this.content = content;
+        this.result = result;
+    }
 
     public Game(int id, int player1, int player2) {
         this.id = id;

@@ -1,7 +1,11 @@
 import com.jcraft.jsch.*;
 
 import java.io.*;
-import java.nio.file.Path;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 public class Game extends Thread {
 
@@ -12,6 +16,8 @@ public class Game extends Thread {
     private boolean turn;
     private String SGF;
     private Player p1, p2;
+    private static HttpURLConnection con;
+
 
 
     public Game(int size) {
@@ -115,6 +121,7 @@ public class Game extends Thread {
         }
         System.out.println(gameId + " a fost terminat. \n" + SGF);
         upload(this.SGF, this.gameId);
+        uploadRest();
     }
 
     public String getGameId() {
@@ -179,7 +186,7 @@ public class Game extends Thread {
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
             } else {
-                System.out.println("File already exists.");
+                //System.out.println("File already exists.");
             }
             FileWriter myWriter = new FileWriter(name +".txt");
             myWriter.write(SGF);
@@ -209,4 +216,52 @@ public class Game extends Thread {
 
 
     }
+    public void uploadRest(){
+        var url = "http://localhost:8080/rest/game";
+        var urlParameters = "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwicGxheWVyMSI6MTEsInBsYXllcjIiOjEwLCJjb250ZW50IjoiQUI6MTEsNlxuQVc6MTIsM1xuQUI6MTEsNVxuQVc6MTIsNFxuQUI6MTEsNFxuQVc6MTIsNVxuQUI6MTEsN1xuQVc6MTIsMlxuQUI6MTEsOCIsInJlc3VsdCI6IndoaXRlIHdvbiIsImlhdCI6MTUxNjIzOTAyMn0.h2sRzFg7z67SkZOFX1tneVB1S4w_zMQUFYEBaSsfo2Q";
+        byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
+
+        try {
+
+            var myurl = new URL(url);
+            con = (HttpURLConnection) myurl.openConnection();
+
+            con.setDoOutput(true);
+            con.setRequestMethod("POST");
+            con.setRequestProperty("User-Agent", "Java client");
+            con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+            try (var wr = new DataOutputStream(con.getOutputStream())) {
+
+                wr.write(postData);
+            }
+
+            StringBuilder content;
+
+            try (var br = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+
+                String line;
+                content = new StringBuilder();
+
+                while ((line = br.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+
+            System.out.println(content.toString());
+
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+
+            con.disconnect();
+        }
+    }
 }
+

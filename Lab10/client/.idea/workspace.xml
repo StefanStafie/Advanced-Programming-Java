@@ -7,7 +7,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd32f72c-4dfd-40b1-a039-517c935cefe3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HistoryListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/ExceptionMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/MyJWT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/MyRestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/RestControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/client/GameVisuals.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/GameVisuals.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameVisuals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameVisuals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../server/0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/GomokuServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/GomokuServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab11/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/DatabaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Rest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Rest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +203,9 @@
       <workItem from="1588508831613" duration="2424000" />
       <workItem from="1588512422102" duration="42000" />
       <workItem from="1588694990487" duration="459000" />
+      <workItem from="1588850020968" duration="1294000" />
+      <workItem from="1589225568961" duration="2345000" />
+      <workItem from="1589229532963" duration="35000" />
     </task>
     <servers />
   </component>
@@ -195,10 +221,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="223" y="72" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1588093377036" />
-    <state x="731" y="186" key="#com.intellij.ide.util.MemberChooser" timestamp="1588167183831">
+    <state x="731" y="186" key="#com.intellij.ide.util.MemberChooser" timestamp="1589225781833">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="731" y="186" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1588167183831" />
+    <state x="731" y="186" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1589225781833" />
     <state x="499" y="201" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588161838815">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -211,22 +237,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1588510654155" />
-    <state width="878" height="246" key="GridCell.Tab.0.bottom" timestamp="1588512395134">
+    <state width="746" height="190" key="GridCell.Tab.0.bottom" timestamp="1589229415799">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="878" height="246" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588512395134" />
-    <state width="878" height="246" key="GridCell.Tab.0.center" timestamp="1588512395134">
+    <state width="746" height="190" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589229415799" />
+    <state width="746" height="190" key="GridCell.Tab.0.center" timestamp="1589229415799">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="878" height="246" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588512395134" />
-    <state width="878" height="246" key="GridCell.Tab.0.left" timestamp="1588512395134">
+    <state width="746" height="190" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1589229415799" />
+    <state width="746" height="190" key="GridCell.Tab.0.left" timestamp="1589229415798">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="878" height="246" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588512395134" />
-    <state width="878" height="246" key="GridCell.Tab.0.right" timestamp="1588512395134">
+    <state width="746" height="190" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1589229415798" />
+    <state width="746" height="190" key="GridCell.Tab.0.right" timestamp="1589229415799">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="878" height="246" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588512395134" />
+    <state width="746" height="190" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1589229415799" />
     <state width="678" height="315" key="GridCell.Tab.1.bottom" timestamp="1587999571965">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -263,18 +289,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588162097418" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588695318997">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1589229541959">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1588695318997" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1589229541959" />
     <state x="499" y="197" key="extract.method.dialog" timestamp="1588167677851">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="197" key="extract.method.dialog/0.0.1536.834@0.0.1536.834" timestamp="1588167677851" />
-    <state x="209" y="0" key="new project wizard" timestamp="1588695447389">
+    <state x="209" y="0" key="new project wizard" timestamp="1589229562835">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="209" y="0" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1588695447389" />
+    <state x="209" y="0" key="new project wizard/0.0.1536.834@0.0.1536.834" timestamp="1589229562835" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1588160942175">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -290,42 +316,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameVisuals.java</url>
-          <line>88</line>
+          <line>94</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameVisuals.java</url>
-          <line>89</line>
+          <line>95</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameVisuals.java</url>
-          <line>90</line>
+          <line>96</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameVisuals.java</url>
-          <line>94</line>
+          <line>100</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameVisuals.java</url>
-          <line>91</line>
+          <line>97</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameVisuals.java</url>
-          <line>92</line>
+          <line>98</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GameVisuals.java</url>
-          <line>93</line>
+          <line>99</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/GameVisuals.java</url>
-          <line>87</line>
+          <line>93</line>
           <properties class="GameVisuals" method="end">
             <option name="EMULATED" value="true" />
           </properties>
