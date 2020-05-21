@@ -2,32 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb0d4261-cd21-41ba-859b-f23f4452464a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/HistoryListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/ExceptionMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/MyJWT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/MyRestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/RestControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/artifacts/client_jar/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/artifacts/client_jar/client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/GameVisuals.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/GameVisuals.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/GameVisuals.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/GameVisuals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jcraft_jsch_0_1_55.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jcraft_jsch_0_1_55.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab11/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/DatabaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Rest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Rest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab12/out/production/Lab12/com/company/Mouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab12/out/production/Lab12/com/company/Mouse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab12/src/com/company/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab12/src/com/company/Mouse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="server" />
@@ -57,6 +56,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DBE.Init.BalloonShown" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -73,7 +73,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Unnamed">
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.grunt">
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GomokuServer" />
       <module name="server" />
@@ -146,15 +151,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="js.build_tools.grunt">
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.Unnamed" />
-      <item itemvalue="Tomcat Server.Tomcat 7.0.99" />
-    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -165,11 +161,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -198,6 +189,8 @@
       <workItem from="1588508812069" duration="3435000" />
       <workItem from="1588849980333" duration="4069000" />
       <workItem from="1589225555715" duration="2018000" />
+      <workItem from="1589454475825" duration="1303000" />
+      <workItem from="1589539584679" duration="16000" />
     </task>
     <servers />
   </component>
@@ -229,22 +222,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="159" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1588247843895" />
-    <state width="750" height="240" key="GridCell.Tab.0.bottom" timestamp="1589229411161">
+    <state width="749" height="240" key="GridCell.Tab.0.bottom" timestamp="1589472890068">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="750" height="240" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589229411161" />
-    <state width="750" height="240" key="GridCell.Tab.0.center" timestamp="1589229411161">
+    <state width="749" height="240" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589472890068" />
+    <state width="749" height="240" key="GridCell.Tab.0.center" timestamp="1589472890068">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="750" height="240" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1589229411161" />
-    <state width="750" height="240" key="GridCell.Tab.0.left" timestamp="1589229411160">
+    <state width="749" height="240" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1589472890068" />
+    <state width="749" height="240" key="GridCell.Tab.0.left" timestamp="1589472890068">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="750" height="240" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1589229411160" />
-    <state width="750" height="240" key="GridCell.Tab.0.right" timestamp="1589229411161">
+    <state width="749" height="240" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1589472890068" />
+    <state width="749" height="240" key="GridCell.Tab.0.right" timestamp="1589472890068">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="750" height="240" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1589229411161" />
+    <state width="749" height="240" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1589472890068" />
     <state width="686" height="324" key="GridCell.Tab.1.bottom" timestamp="1588164828165">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -297,10 +290,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1588173943258" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1588508812057">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1589904933110">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1588508812057" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1589904933110" />
     <state x="499" y="197" key="extract.method.dialog" timestamp="1587999011319">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -317,26 +310,5 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1588176226147" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Board.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Board.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/GomokuServer.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

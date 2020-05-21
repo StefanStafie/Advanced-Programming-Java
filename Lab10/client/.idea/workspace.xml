@@ -7,30 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd32f72c-4dfd-40b1-a039-517c935cefe3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/HistoryListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/ExceptionMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/MyJWT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/MyRestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/RestControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/GameVisuals.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/GameVisuals.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameVisuals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameVisuals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_jcraft_jsch_0_1_55.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/libraries/Maven__com_jcraft_jsch_0_1_55.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../server/0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/GomokuServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/GomokuServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/target/classes/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab11/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/DatabaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Rest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab11/src/main/java/com/example/demo/Rest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab12/out/production/Lab12/com/company/Mouse.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab12/out/production/Lab12/com/company/Mouse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lab12/src/com/company/Mouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lab12/src/com/company/Mouse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +188,7 @@
       <workItem from="1588850020968" duration="1294000" />
       <workItem from="1589225568961" duration="2345000" />
       <workItem from="1589229532963" duration="35000" />
+      <workItem from="1589455180475" duration="786000" />
     </task>
     <servers />
   </component>

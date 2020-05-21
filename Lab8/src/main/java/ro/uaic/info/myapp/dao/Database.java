@@ -13,8 +13,8 @@ public class Database{
     private Database(){
         try {
             this.conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3307/musicalbums",
-                    "dba", "sql");
+                    "jdbc:oracle:thin:@localhost:1521:XE",
+                    "STUDENT", "STUDENT");
             this.stmt = conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();

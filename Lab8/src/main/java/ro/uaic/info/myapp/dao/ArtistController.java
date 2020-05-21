@@ -1,5 +1,7 @@
 package ro.uaic.info.myapp.dao;
 
+import ro.uaic.info.myapp.app.Artist;
+
 import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,16 +18,22 @@ public class ArtistController {
      * @param country the country of the artist to be inserted
      *
      */
-    public void create(String name, String country) {
+    public void create(int id, String name, String country) {
         int affectedRows = -1; // might be useful later
         try {
             java.sql.Statement stmt = Database.getInstance().getStmt();
-            affectedRows = stmt.executeUpdate("INSERT INTO artists (name, country) values ('" + name + "', '" + country + "')");
+            affectedRows = stmt.executeUpdate("INSERT INTO artists (id, name, country) values (" + id + ", '" + name + "', '" + country + "')");
         } catch (SQLException e) {
             e.printStackTrace();
         }
         //System.out.println(affectedRows);
     }
+
+
+
+
+
+
 
     /** finds entry with given name
      *
@@ -48,6 +56,43 @@ public class ArtistController {
         }
         return artistIds;
     }
+
+
+
+
+
+
+
+    public Artist find(int id){
+        ResultSet rset = null;
+        Artist artist = new Artist();
+        try {
+            rset = Database.getInstance().getStmt().executeQuery("Select * from artists WHERE id = " + id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try{
+            rset.next();
+            artist.setName(rset.getString("name"));
+            artist.setCountry(rset.getString("country"));
+            artist.setId(rset.getInt("id"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return artist;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     public List findAll(){
         ResultSet rset = null;

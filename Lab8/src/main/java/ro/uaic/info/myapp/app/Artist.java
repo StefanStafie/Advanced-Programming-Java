@@ -3,12 +3,16 @@ package ro.uaic.info.myapp.app;
 import com.github.javafaker.Faker;
 import ro.uaic.info.myapp.dao.ArtistController;
 
-public class Artist {
-    //private int id; //might be useful later
+import java.io.Serializable;
+
+public class Artist implements Serializable {
+    private int id;
+
     private String name;
     private String country;
 
-    public Artist(String name, String country) {
+    public Artist(int id, String name, String country) {
+        this.id = id;
         this.name = name;
         this.country = country;
     }
@@ -25,7 +29,23 @@ public class Artist {
     }
 
     public void insertIntoDatabase() {
-        new ArtistController().create(this.name, this.country);
+        new ArtistController().create(this.id, this.name, this.country);
+    }
+    public void getFromDatabase(int id){
+        Artist aux = new ArtistController().find(id);
+        this.id = aux.getId();
+        this.name = aux.getName();
+        this.country = aux.getCountry();
+    }
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -48,7 +68,8 @@ public class Artist {
     @Override
     public String toString() {
         return "Artist{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", country='" + country + '\'' +
                 '}';
     }

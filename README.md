@@ -121,7 +121,7 @@ null;
 - Create REST services for inserting and reading games.
 - Integrate the services into your previous project. (History of games from client. Inserting games into database from server)
 - Handle the exceptions using a RestControllerAdvice.
-- Secure your services with JSON Web Tokens
+- Secure services with JSON Web Tokens.
 
 # Lab12
 

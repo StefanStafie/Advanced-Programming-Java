@@ -4,21 +4,17 @@ import javafx.scene.layout.GridPane;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.Serializable;
 
-public class DesignPanel extends JPanel {
-    JTextArea text;
+public class DesignPanel extends JPanel implements Serializable {
 
     public DesignPanel() {
         this.setLayout(null);
         this.setBackground(Color.DARK_GRAY);
 
     }
-
-    public String getText() {
-        return text.getText();
-    }
-
-    public void setText(String text) {
-        this.text.setText(text);
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
