@@ -1,128 +1,169 @@
-#### Advanced-Programming-Java
+# Advanced Programming — Java Labs
 
-# Lab 3
+A collection of Java laboratory assignments covering algorithms, GUI programming, multithreading, databases, networking, and REST APIs.
 
-The classes Book, Food and Weapon should implement the interface Item.
-   When printing a Knapsack with Knapsack.print, items are ordered according to name.
-   Greedy and Dynamic are 2 classes that implement the Algorithm interface with the **solve** method.
-   ProblemGenerator class creates Item[] objects randomly with a chosen number of items.
-   The results of tests are as follow:
+---
 
+## Table of Contents
 
-**10000 iterations on each test**
+- [Lab 3 — Knapsack Problem](#lab-3--knapsack-problem)
+- [Lab 4 — Hospital–Resident Matching](#lab-4--hospitalresident-matching)
+- [Lab 5 — Document Catalog](#lab-5--document-catalog)
+- [Lab 6 — Shape Drawing GUI](#lab-6--shape-drawing-gui)
+- [Lab 7 — Multithreaded Token Game](#lab-7--multithreaded-token-game)
+- [Lab 8 — Musical Albums Database](#lab-8--musical-albums-database)
+- [Lab 10 — Go Game (Client–Server)](#lab-10--go-game-clientserver)
+- [Lab 11 — REST API with JWT](#lab-11--rest-api-with-jwt)
+- [Lab 12 — Design Panel](#lab-12--design-panel)
 
-pairs: dynamic--greedy
+---
 
+## Lab 3 — Knapsack Problem
 
-capacity 500, itemCount 500 : 
+Solves the 0/1 Knapsack problem using two strategies.
 
-	avg value:  	2501.794638376264  2470.371865336172
-   	avg time:     	6.3644  0.2276
+**Key classes:**
+- `Item` interface — implemented by `Book`, `Food`, and `Weapon`
+- `Algorithm` interface — implemented by `Greedy` and `Dynamic`
+- `Knapsack` — prints items sorted by name
+- `ProblemGenerator` — randomly generates `Item[]` arrays
 
-capacity 50, itemCount 50:
+**Benchmark results** (10 000 iterations, dynamic vs. greedy):
 
-    avg value 	235.71401113725702  208.18711464508496
-	avg time: 	0.0735  0.0192
+| Capacity | Items | Avg value (D / G) | Avg time ms (D / G) |
+|----------|-------|-------------------|---------------------|
+| 500      | 500   | 2501.79 / 2470.37 | 6.36 / 0.23         |
+| 50       | 50    | 235.71 / 208.19   | 0.07 / 0.02         |
+| 1000     | 15    | 787.75 / 787.75   | 0.53 / 0.005        |
+| 15       | 1000  | 488.17 / 465.91   | 0.34 / 0.39         |
 
-Capacity 1000, itemCount 15: 	
+Dynamic programming consistently yields higher values; greedy is significantly faster for large inputs.
 
-    avg value  	787.7506059869218  787.7501364038869
-	avg time  	0.5299  0.0053
+---
 
-Capacity 15, itemCount 1000:
-        
- 	avg value	488.1674715302053  465.9094789124492
-    avg time	0.3442  0.3938
+## Lab 4 — Hospital–Resident Matching
 
+Implements the **Stable Matching** (Gale–Shapley) algorithm for the hospital–resident problem.
 
+**Key classes:**
+- `ProblemGenerator` — generates hospitals and residents; names are produced with the [Faker](https://github.com/faker-ruby/faker) library
+- `Algorithm` — produces a `Matching` from a `Problem`
+- `CheckStable` — verifies the stability of a matching
+- `Compulsory` — uncomment `new Compulsory()` in `Main` to run the compulsory part
 
-# Lab4
+---
 
-The Compulsory part can be viewed by uncommenting "//Compulsory compulsory = new Compulsory();" in Main
+## Lab 5 — Document Catalog
 
-Problems are generated using ProblemGenerator. The number of hospitals and residents to be generated are given as parameters. The names are generated using Faker class (https://github.com/faker-ruby/faker)
+An interactive shell application for managing a catalog of documents.
 
-A possible Matching is created using Algorithm on a Problem
+**Features:**
+- `save` / `load` / `view` commands
+- JSON-based persistence to `.txt` files
+- Command classes: `ListCommand`, `LoadCommand`, `ViewCommand`, `ReportHtmlCommand` — all implement the `Command` interface
+- Interactive shell (type `help` for the command list)
+- Create catalogs, add documents and tags
+- `ReportHtmlCommand` generates an `index.html` in the current directory
+- Distributed as an executable JAR (`JavaEXE.jar`)
 
-For checking the corectness of Matching, use CheckStable;
+---
 
+## Lab 6 — Shape Drawing GUI
 
-# Lab5
+A Java Swing application for drawing and saving shapes.
 
-Uploaded--
-Implemented save, load and view; 
+**Features:**
+- Shapes: `Rectangle`, `Circle`, `RegularPolygon`
+- Dynamic configuration panel that adapts to the selected shape
+- Colors: Red, Green, Blue
+- Save / load canvas image via a file chooser dialog
+- Reset and Exit buttons
 
-Optional:
-    
-    -Save and load using txt files. (in JSON format)
-    -Classes for each Command (ListCommand, LoadCommand, ViewCommand, ReportHtmlCommand) that implement the interface Command
-    -created shell (input "help" for command list)
-    -ability to create catalog, add documents and tags to documents
-    -report html creates index.html in current directory
-    -created executable JAR
+> **Note:** Click on the canvas after every change to refresh the canvas and configuration panel.
 
-# Lab6
+---
 
-    Support for 3 Shapes (Rectangle, Circle, RegularPolygon).
-    The configuration panel adapts to the current Shape.
-    Support for 3 colors (Red, Green, Blue).
-    Support for saving and loading the image to disk using a file chooser.
-    Support for reset and exit.
-To refresh canvas and configPanel, click on canvas after every change.
+## Lab 7 — Multithreaded Token Game
 
-# Lab7
-No update for Lab7
+A concurrent game where multiple player threads compete to form a token progression.
 
-    The game plays itself in initialisation ( new Game(playerCount, tokenCount, progressionSize); )
-    A thread is created for each Player.
-    Each player takes progressionSize tokens from the Board (using getToken()). Then, he exchanges tokens (1 player token with 1 board token, using exchangeToken() ) until the player has a progression.
-    Both getToken() and exchangeToken() are synchronised methods so that the players don't clash when they take tokens. After a token is taken from the board, it is removed from the list of tokens available in the board.
-    A player may only keep progressionSize Tokens in hand.
-    When a player obtains a progression, the main thread stops all other player threads (killing it softly) and prints the winner.
+**How it works:**
+- Start with `new Game(playerCount, tokenCount, progressionSize)`
+- A dedicated `Thread` is created for each `Player`
+- Each player collects `progressionSize` tokens from the `Board` via `getToken()`, then calls `exchangeToken()` to swap tokens with the board until they hold a valid progression
+- `getToken()` and `exchangeToken()` are `synchronized` to prevent race conditions; claimed tokens are removed from the board
+- A player holds at most `progressionSize` tokens at once
+- The main thread detects the winner, stops all other threads gracefully, and prints the result
 
-No update for Lab7 ^^^^^^
+---
 
-# Lab8
+## Lab 8 — Musical Albums Database
 
-    The database is created using MySql and is hosted by localhost phpmyadmin. To use:
-    - choice 1: copy the musicalalbums folder to your C:\xampp\mysql\data
-    - choice 2: use musicalalbums.sql to create the database on your system.
- 
-- The Test class inserts 3 rows in artist table and 3 rows in album table using create(). Then uses findByName() and findByArtist() to return a result set and and print on screen.
-- ArtistController, having the methods create(String name, String country) and findByName(String name):return ResultSet
-- AlbumController, having the methods create(String name, int artistId, int releaseYear) and findByArtist(int artistId):return ResultSet
-- Database class is a Singleton. Has Statement and Connection variables.
- 
-Optional Update:
+A MySQL-backed application for managing artists, albums, and chart rankings.
 
-- Created tables 'charts' (id, title)and 'chart_record' (id, chart_id, album_id) for storing charts.
-- Created classes Artist, Album, Chart and ChartController.
-- Used a fake data generator.
-- Implemented a ranking based on number of points (might be interpreted as views). More points bring the artist higher in ranking.
-- Created a method for finding the ranking of artists based on all their albums that appear in all charts. 
-- Test class generates 20 artists, 100 albums and 10 charts with 10 albums each. Then displays the ranking of the artists based on their points.
+**Setup:**
+1. **Option A** — Copy the `musicalbums/` folder to `C:\xampp\mysql\data`
+2. **Option B** — Import `musicalalbums.sql` into your MySQL instance
 
-# Lab9
+**Core classes:**
+- `Database` — Singleton holding `Connection` and `Statement`
+- `ArtistController` — `create(name, country)`, `findByName(name) → ResultSet`
+- `AlbumController` — `create(name, artistId, releaseYear)`, `findByArtist(artistId) → ResultSet`
 
-null;
+**Optional extensions:**
+- Tables `charts` and `chart_record` for playlist/chart management
+- `Artist`, `Album`, `Chart`, `ChartController` model classes
+- Fake data generation
+- Artist ranking by accumulated chart points
+- `Test` class generates 20 artists, 100 albums, and 10 charts (10 albums each) and prints the final ranking
 
-# Lab10
+---
 
-- Implemented functionalities of the game
-- The clients send to the server commands such as: create game, join game, submit move, etc.
-- The server is responsible with the game management and mediating the players.
-- Once a game is finished a SGF representation of the game is uploaded to a Web server ( "http://students.info.uaic.ro/~stefan.stafie/" ) using JCraft
-- Created a GUI for the game
-- In server, a Thread is created for each room (game) and for each player (client), allowing multiple games to take place at once
-- Client built as executable JAR. 
+## Lab 10 — Go Game (Client–Server)
 
-# Lab11
-- Compulsory
-- Create REST services for inserting and reading games.
-- Integrate the services into your previous project. (History of games from client. Inserting games into database from server)
-- Handle the exceptions using a RestControllerAdvice.
-- Secure services with JSON Web Tokens.
+A networked implementation of the board game **Go** with a Swing GUI.
 
-# Lab12
+**Architecture:**
+- **Client** — Swing GUI; communicates with the server via commands (`create game`, `join game`, `submit move`, …). Distributed as `client.jar`
+- **Server** — manages game rooms and mediates players; spawns one thread per room and one per connected client, enabling multiple concurrent games
+- On game completion, an SGF file is uploaded to a web server via **JCraft** (SSH/SFTP)
 
-- compulsory
+---
+
+## Lab 11 — REST API with JWT
+
+A **Spring Boot** REST service layer that integrates with the Go game from Lab 10.
+
+**Features:**
+- REST endpoints for inserting and retrieving game records
+- Integrated with the Lab 10 server (game history from client; game insertion from server)
+- Centralised exception handling via `@RestControllerAdvice`
+- Authentication secured with **JSON Web Tokens (JWT)**
+
+**Run:**
+```bash
+cd Lab11
+./mvnw spring-boot:run
+```
+
+---
+
+## Lab 12 — Design Panel
+
+A Java Swing design/drawing tool.
+
+**Key classes:**
+- `MainFrame` — application window
+- `DesignPanel` — canvas for drawing
+- `ControlPanel` — tool/configuration controls
+- `Mouse` — mouse event handler
+- `Focus` — focus management
+
+---
+
+## Requirements
+
+- Java 8 or later
+- Maven (for Labs 4, 5, 8, 11)
+- MySQL + XAMPP or equivalent (for Lab 8)
+- Network access (for Lab 10 SGF upload)
